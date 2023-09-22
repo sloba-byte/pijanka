@@ -25,9 +25,9 @@ function show() {
         let btn = document.createElement("button")
         btn.innerText = "Asked"
         btn.onclick = () => {
-            fetch("http://192.168.1.13:3333/ask?i=" + i)
+            fetch("https://192.168.1.13:3333/ask?i=" + i)
                 .then(() => {
-                    fetch("http://192.168.1.13:3333")
+                    fetch("https://192.168.1.13:3333")
                         .then((response) => response.json())
                         .then((json) => {
                             _songsToAsk = json.Songs
@@ -57,7 +57,7 @@ function show() {
 }
 
 function onLoad() {
-    fetch("http://192.168.1.13:3333")
+    fetch("https://192.168.1.13:3333")
         .then((response) => response.json())
         .then((json) => {
             _songsToAsk = json.Songs
@@ -66,7 +66,7 @@ function onLoad() {
         });
 
     setInterval(() => {
-        fetch("http://192.168.1.13:3333")
+        fetch("https://192.168.1.13:3333")
             .then((response) => response.json())
             .then((json) => {
                 _songsToAsk = json.Songs
