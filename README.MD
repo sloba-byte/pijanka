@@ -17,6 +17,12 @@ Or here, how to know which songs are left to be played?
             show()
         });
 
+//how this works:
+//1) fetch is executed async (async means similar as setInterval, it's not going to execute function right away but sometimes in future)
+//2) When fetch finish, it's going to call function from .then
+//3) fetch returns response, which contains reposne.json()
+//4) next .then is going to use this json (json contains Songs and Asked. It's basiclly a Class which has arrays .Songs and .Asked
+
 ```
 
 ```js
